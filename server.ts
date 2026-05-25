@@ -1,8 +1,6 @@
 import cors from "cors";
 import express from "express";
-import path from "path";
 import dotenv from "dotenv";
-import { createServer as createViteServer } from "vite";
 import {
   BedrockRuntimeClient,
   ConverseCommand,
@@ -25,6 +23,7 @@ app.use(
 );
 
 app.use(express.json());
+const PORT = Number(process.env.PORT) || 3000;
 
 app.get("/health", (_req, res) => {
   res.json({
