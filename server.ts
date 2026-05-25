@@ -15,7 +15,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://seopluswpress.github.io/pw-fd/",
+    origin: "https://seopluswpress.github.io",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
