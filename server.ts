@@ -32,7 +32,6 @@ app.get("/health", (_req, res) => {
     service: "AEPMA Backend",
   });
 });
-const PORT = 3000;
 
 // Initialize AWS Bedrock Client
 const bedrockClient = new BedrockRuntimeClient({
