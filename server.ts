@@ -280,14 +280,7 @@ Return JSON: { "executiveSummary": "string", "energySavingsScore": "string", "cr
 // ----------------- BOOTSTRAP -----------------
 
 async function startServer() {
-  if (process.env.NODE_ENV !== "production") {
-    const vite = await createViteServer({ server: { middlewareMode: true }, appType: "spa" });
-    app.use(vite.middlewares);
-  } else {
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
-    app.get('*', (_, res) => res.sendFile(path.join(distPath, 'index.html')));
-  }
+  
 
   app.listen(PORT, "0.0.0.0", () => {
     console.log(`[AEPMA Server] running on http://localhost:${PORT} using Gemma 3 via Bedrock Messages API`);
